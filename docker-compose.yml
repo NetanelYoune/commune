@@ -29,6 +29,26 @@ services:
       mongo:
         condition: service_healthy
 
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "9000:80"
+
+  realtime:
+    build:
+      context: .
+      dockerfile: apps/realtime/Dockerfile
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PORT: "4100"
+      API_URL: http://api:4000
+    depends_on:
+      - api
+
 volumes:
   mongo-data:
   uploads-data:
