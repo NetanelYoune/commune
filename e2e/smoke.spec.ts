@@ -26,7 +26,7 @@ test("join, post, sign out and sign back in", async ({ page }) => {
     await page.goto("/register");
     await page.getByLabel("Username").fill(user.username);
     await page.getByLabel("Email").fill(user.email);
-    await page.getByLabel("Password").fill(user.password);
+    await page.locator('input[type="password"]').fill(user.password);
     await page.getByRole("button", { name: "Create account" }).click();
     await expect(page.getByRole("textbox", { name: "Write a post" })).toBeVisible();
   });
@@ -57,7 +57,7 @@ test("join, post, sign out and sign back in", async ({ page }) => {
   await test.step("sign back in", async () => {
     await page.goto("/login");
     await page.getByLabel("Email").fill(user.email);
-    await page.getByLabel("Password").fill(user.password);
+    await page.locator('input[type="password"]').fill(user.password);
     await page.getByRole("button", { name: "Log in" }).click();
     await expect(page.getByRole("textbox", { name: "Write a post" })).toBeVisible();
   });
