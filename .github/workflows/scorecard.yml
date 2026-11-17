@@ -1,3 +1,4 @@
+
 name: Scorecard
 
 # OpenSSF Scorecard grades the repository's security habits (branch protection, dependency updates, pinned
@@ -25,7 +26,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - uses: ossf/scorecard-action@v2.4.0
+      - uses: ossf/scorecard-action@v2.4.4
         with:
           results_file: results.sarif
           results_format: sarif
