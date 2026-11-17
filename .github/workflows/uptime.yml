@@ -6,8 +6,6 @@ name: Uptime check
 # Settings and limits: docs/MONITORING.md
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
