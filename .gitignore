@@ -11,3 +11,5 @@ coverage
 .idea
 playwright-report/
 test-results/
+
+/backups/

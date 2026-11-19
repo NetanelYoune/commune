@@ -1,0 +1,18 @@
+services:
+  mongo:
+    ports: !reset []
+    command: ["mongod", "--auth"]
+
+  api:
+    ports: !reset []
+    env_file: !override
+      - .env.production
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: ${PROD_MONGODB_URI:?Set PROD_MONGODB_URI}
+
+  realtime:
+    env_file: !override
+      - .env.production
+    environment:
+      NODE_ENV: production
