@@ -51,7 +51,8 @@ jobs:
           if not re.fullmatch(r"[0-9a-f]{40}", sha):
               raise ValueError("Invalid commit SHA")
 
-          command = f"""set -euo pipefail
+          command = f"""#!/bin/bash
+          set -euo pipefail
           sudo -u ubuntu bash -c '
           set -euo pipefail
           cd /home/ubuntu/commune
