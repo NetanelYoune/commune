@@ -13,3 +13,20 @@ playwright-report/
 test-results/
 
 /backups/
+
+# Terraform
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/crash.log
+**/crash.*.log
+**/*.tfvars
+**/*.tfvars.json
+.terraform.lock.hcl
+
+# Ansible
+ansible/inventory.ini
+
+# SSH private keys
+*.pem
+*.key
