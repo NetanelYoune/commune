@@ -22,7 +22,7 @@ test-results/
 **/crash.*.log
 **/*.tfvars
 **/*.tfvars.json
-.terraform.lock.hcl
+
 
 # Ansible
 ansible/inventory.ini
