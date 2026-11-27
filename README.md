@@ -258,8 +258,27 @@ Read the full policy and the GitHub account checklist in [docs/SECURITY.md](docs
 
 ## Monitoring
 
+
 Server and browser errors are grouped by fingerprint and shown in the admin page, with an email for each new kind of error. `GET /api/health` and `GET /api/health/ready` are ready for uptime monitors, and every response carries an `X-Request-Id` to find it in the logs. See [docs/MONITORING.md](docs/MONITORING.md).
 
+## DevOps Infrastructure & CI/CD — AWS
+
+In addition to the original application deployment architecture, this repository includes a separate AWS-based DevOps implementation.
+
+**My DevOps contributions:**
+
+- Containerized the web, API, and realtime services using Docker.
+- Configured Docker Compose and Nginx for application deployment.
+- Provisioned an Ubuntu EC2 instance using Terraform.
+- Automated server configuration and Docker installation using Ansible.
+- Implemented automated CI checks with GitHub Actions.
+- Configured continuous deployment using GitHub Actions, AWS OIDC, IAM roles, and AWS Systems Manager.
+- Implemented deployment verification using API health checks.
+- Applied infrastructure security practices and AWS cost monitoring.
+
+The original Commune application was developed by another developer. My contribution focuses on infrastructure, deployment automation, and DevOps engineering.
+
+**Full technical documentation:** [DevOps Infrastructure & CI/CD](docs/DEVOPS.md)
 ## Deployment
 
 Commune runs as **two Vercel projects** from this one repository, plus MongoDB Atlas and one small always-on service for real time.
